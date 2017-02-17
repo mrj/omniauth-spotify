@@ -45,7 +45,7 @@ config.omniauth :spotify, keys.spotify['client_id'], keys.spotify['client_secret
 ## Forcing a Permission-Request Dialog
 
 If a user has given permission for an app to access a scope, that permission won't be asked again unless the user revokes access.
-In these cases, authorization sequences proceed without user interation.
+In these cases, authorization sequences proceed without user interaction.
 
 To force a permission dialog being shown to the user, which also makes it possible for them to switch Spotify accounts,
 set either `request.env['rack.session'][:ommiauth_spotify_force_approval?]` or `flash[:ommiauth_spotify_force_approval?]` (Rails apps only)
@@ -54,7 +54,7 @@ to a truthy value on the request that performs the Omniauth redirection.
 ## Auth Hash Schema
 
 * Authorization data is available in the `request.env['omniauth.auth'].credentials` -- a hash that also responds to
-the `token`, `refresh_token`, `expires_at`, and `expires` methods.
+the `token`, `refresh_token`, `expires_at`, and `expires?` methods.
 
 ```ruby
  {
